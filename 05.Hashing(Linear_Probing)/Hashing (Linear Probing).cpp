@@ -48,25 +48,6 @@ void Delete(int ary[],int hFn,int Size)
 	if(--n==Size)
 	        cout<<"Element not found in hash table\n";
 } 
-void Search(int ary[],int hFn,int Size)
-{
-	int element,pos,n=0;
-	cout<<"Enter element you want to search\n";
-	cin>>element;
-	pos = element%hFn;
-	while(n++ != Size)
-	{
-		if(ary[pos]==element)
-		{
-			cout<<"Element found at index "<<pos<<"\n";
-			break;
-		}
-		else if(ary[pos]==INT_MAX ||ary[pos]!=INT_MIN)
-                pos = (pos+1) %hFn;
-	}
-	if(--n==Size)
-        cout<<"Element not found in hash table\n";
-}
 void display(int ary[],int Size)
 {
 	int i;
@@ -88,7 +69,7 @@ int main()
 	do
 	{
 		cout<<"Enter your choice\n";
-		cout<<" 1-> Insert\n 2-> Delete\n 3-> Display\n 4-> Searching\n 0-> Exit\n";
+		cout<<" 1-> Insert\n 2-> Delete\n 3-> Display\n 0-> Exit\n";
 		cin>>choice;
 		switch(choice)
 		{
@@ -98,8 +79,7 @@ int main()
 					break;
 			case 3:	display(ary,Size);
 					break;
-			case 4:	Search(ary,hFn,Size);
-					break;
+		
 			default:cout<<"Enter correct choice\n";
 					break;
 		}
